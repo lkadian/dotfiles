@@ -1,5 +1,4 @@
-# I like Java style
---style=java
+--style=google
 
 # Indent using 4 spaces per indent
 --indent=spaces=4
