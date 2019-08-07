@@ -8,8 +8,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugins go here
 Plugin 'arcticicestudio/nord-vim'
-Plugin 'Chiel92/vim-autoformat'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 
