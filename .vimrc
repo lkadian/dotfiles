@@ -88,7 +88,7 @@ set tm=500
 set clipboard=unnamedplus
 
 
-""" Plugin specific stuff
+""" Plugin-specific
 " vim-indent-guides
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
@@ -103,7 +103,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-" Unsure
+" Addendum
 " set list
 " set listchars=tab:▸\ ,eol:¬
 
