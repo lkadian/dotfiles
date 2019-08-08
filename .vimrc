@@ -1,22 +1,24 @@
-""" Vundle init
-set nocompatible              " be iMproved, required
-filetype off                  " required
+""" Vundle
+set nocompatible                 " be iMproved, required
+filetype off                     " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-" Plugins go here
+" Plugins here
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 
-call vundle#end()            " required
+call vundle#end()                " required
 
-filetype plugin indent on    " required
+filetype plugin indent on        " required
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -27,11 +29,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 
 
-""" General
-filetype plugin on
-filetype indent on
-
-
 """ UI
 syntax enable
 set number
@@ -39,6 +36,8 @@ set showmatch                    " Highlights matching parantheses
 set encoding=utf-8               " Set utf8 as standard encoding
 set ruler                        " Always show current position
 set laststatus=2                 " Always show the status line
+set noshowmode                   " Redundant (lightline.vim displays the mode info in the statusline)
+set mouse=a                      " Enable mouse
 colorscheme nord
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -60,7 +59,7 @@ set incsearch                    " Show match as search proceeds
 set nohlsearch                   " Disable search highlighting
 
 
-""" Tabs & indenting
+""" Indenting & tabs
 set autoindent
 set smartindent
 set expandtab                    " Use spaces instead of tabs
@@ -70,8 +69,9 @@ set tabstop=4
 
 """ Key bindings
 map q <Nop>                      " unbind recording, never use it
-noremap <F1> :Autoformat<CR>
-set pastetoggle=<F2>             " binding for :set paste and :set nopaste
+map <C-n> :NERDTreeToggle<CR>
+map <leader>f :Autoformat<CR>    " \f to autoformat code
+set pastetoggle=<leader>z        " \z to toggle paste mode
 
 
 """ Misc
@@ -88,7 +88,7 @@ set tm=500
 set clipboard=unnamedplus
 
 
-""" Plugin specific
+""" Plugin specific stuff
 " vim-indent-guides
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
@@ -98,8 +98,12 @@ let g:lightline = {'colorscheme': 'nord',}
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+" NERDTree
+" This closes vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 " Unsure
 " set list
 " set listchars=tab:▸\ ,eol:¬
+
