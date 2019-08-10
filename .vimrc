@@ -89,6 +89,9 @@ set tabstop=4
 
 
 """ Key bindings
+" These two lines map dd to the black hole register, since I don't use cut
+nnoremap d "_d
+vnoremap d "_d
 map q <Nop>                      " unbind recording, never use it
 set pastetoggle=<leader>z        " \z to toggle paste mode
 
