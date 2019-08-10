@@ -78,6 +78,7 @@ set pastetoggle=<leader>z        " \z to toggle paste mode
 
 
 """ Misc
+set hidden                       "  hides buffers instead of closing them
 " Disable annoying beeping
 set belloff=all
 set noerrorbells
@@ -106,7 +107,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 " This makes NERDTree quit when you open a file with it
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 " Rebinds the open H split to _
 " let NERDTreeMapOpenSplit='_'
 " Rebinds the open V split to |
