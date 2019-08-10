@@ -34,6 +34,22 @@ filetype plugin indent on        " required
 " see :h vundle for more details or wiki for FAQ
 
 
+""" General
+set nomodeline
+set hidden                       "  hides buffers instead of closing them
+" Disable annoying beeping
+set belloff=all
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+" Copy to OS's clipboard instead of internal buffer
+" For this to work the vim version must support clipboard
+" vim --version | grep clip
+" If it doesn't, install a version that does, e.g. vim-gnome / vim-gtk
+set clipboard=unnamedplus
+
+
 """ UI
 syntax enable
 set number
@@ -77,21 +93,6 @@ map q <Nop>                      " unbind recording, never use it
 set pastetoggle=<leader>z        " \z to toggle paste mode
 
 
-""" Misc
-set hidden                       "  hides buffers instead of closing them
-" Disable annoying beeping
-set belloff=all
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-" Copy to OS's clipboard instead of internal buffer
-" For this to work the vim version must support clipboard
-" vim --version | grep clip
-" If it doesn't, install a version that does, e.g. vim-gnome
-set clipboard=unnamedplus
-
-
 """ Plugin-specific
 " vim-indent-guides
 let g:indent_guides_guide_size = 1
@@ -106,12 +107,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-" This makes NERDTree quit when you open a file with it
-" let NERDTreeQuitOnOpen=1
-" Rebinds the open H split to _
-" let NERDTreeMapOpenSplit='_'
-" Rebinds the open V split to |
-" let NERDTreeMapOpenVSplit='|'
 
 
 """ Addendum
