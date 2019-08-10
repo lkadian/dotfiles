@@ -10,11 +10,16 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins here
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'itchyny/lightline.vim'
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
+" May want to stop using this in the future and use linting from ale...
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'ycm-core/YouCompleteMe'
+" For this plugin, you need to install a linter for the language,
+" e.g. flake8 for python
+" Also, requires Vim 8 or higher
+Plugin 'dense-analysis/ale'
 
 call vundle#end()                " required
 
@@ -69,8 +74,6 @@ set tabstop=4
 
 """ Key bindings
 map q <Nop>                      " unbind recording, never use it
-map <C-n> :NERDTreeToggle<CR>
-map <leader>f :Autoformat<CR>    " \f to autoformat code
 set pastetoggle=<leader>z        " \z to toggle paste mode
 
 
@@ -95,15 +98,22 @@ let g:indent_guides_color_change_percent = 3
 let g:indent_guides_enable_on_vim_startup = 1
 " lightline
 let g:lightline = {'colorscheme': 'nord',}
+" Autoformat
+map <leader>f :Autoformat<CR>    " \f to autoformat code
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 " NERDTree
-" This closes vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+" This makes NERDTree quit when you open a file with it
+let NERDTreeQuitOnOpen=1
+" Rebinds the open H split to _
+" let NERDTreeMapOpenSplit='_'
+" Rebinds the open V split to |
+" let NERDTreeMapOpenVSplit='|'
 
 
-" Addendum
+""" Addendum
 " set list
 " set listchars=tab:▸\ ,eol:¬
 
