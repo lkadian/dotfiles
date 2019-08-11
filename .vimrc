@@ -94,6 +94,12 @@ nnoremap d "_d
 vnoremap d "_d
 map q <Nop>                      " unbind recording, never use it
 set pastetoggle=<leader>z        " \z to toggle paste mode
+" Move to the previous buffer with "gp"
+nnoremap gp :bp<CR>
+" Move to the next buffer with "gn"
+nnoremap gn :bn<CR>
+" List all possible buffers with "gl"
+nnoremap gl :ls<CR>
 
 
 """ Plugin-specific
