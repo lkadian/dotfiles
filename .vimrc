@@ -92,8 +92,6 @@ let g:lightline = {'colorscheme': 'nord',}
 map <leader>f :Autoformat<CR>    " \f to autoformat code
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeMapOpenSplit='_'     " Rebinds the open H split to _
-let NERDTreeMapOpenVSplit='|'    " Rebinds the open V split to |
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
