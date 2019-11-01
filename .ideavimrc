@@ -1,0 +1,19 @@
+""" SEARCH
+set ignorecase                   " Case insensitive
+set smartcase                    " Use case if any caps used
+set incsearch                    " Show match as search proceeds
+set nohlsearch                   " Disable search highlighting
+
+""" KEY BINDINGS
+map q <Nop>                      " Unbind recording; never use it
+set pastetoggle=<leader>z        " \z to toggle paste mode
+
+"" Copy to OS's clipboard instead of the internal buffer
+" For this to work the vim version must support clipboard
+" vim --version | grep clip
+" If it doesn't, install a version that does, e.g. vim-gnome or vim-gtk
+set clipboard=unnamedplus
+
+set visualbell
+
+set ideajoin
