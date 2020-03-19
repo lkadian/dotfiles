@@ -8,7 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 "" Plugins go here
-Plugin 'arcticicestudio/nord-vim'
+"" Plugin 'arcticicestudio/nord-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'itchyny/lightline.vim'
@@ -16,7 +16,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'dense-analysis/ale'      " requires Vim >= 8, also linter for the language, e.g. flake8/pep8 for Python
+"" Plugin 'dense-analysis/ale'      " requires Vim >= 8, also linter for the language, e.g. flake8/pep8 for Python
 
 call vundle#end()                " required
 
@@ -30,9 +30,8 @@ filetype plugin indent on        " required
 "
 " see :h vundle for more details or wiki for FAQ
 
-
 """ UI
-colorscheme nord
+colorscheme delek
 syntax enable
 set number
 set showmatch                    " Highlights matching parantheses
